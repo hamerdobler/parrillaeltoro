@@ -99,14 +99,13 @@
 <div class="flex justify-between items-center px-8 py-6 max-w-7xl mx-auto">
 <span class="font-display text-2xl tracking-tighter text-on-surface dark:text-on-surface">PARRILLA EL TORO</span>
 <div class="hidden md:flex items-center gap-12">
-<a class="font-display uppercase tracking-widest text-lg text-tertiary font-bold border-b-2 border-tertiary pb-1" href="#menu">Menu</a>
-<a class="font-display uppercase tracking-widest text-lg text-on-surface-variant hover:text-on-surface transition-colors duration-300" href="#reservas">Reservas</a>
-<a class="font-display uppercase tracking-widest text-lg text-on-surface-variant hover:text-on-surface transition-colors duration-300" href="#ubicacion">LA CARTA</a>
+<a class="font-display uppercase tracking-widest text-lg text-on-surface-variant hover:text-on-surface transition-colors duration-300" href="/carta">La Carta</a>
+<a class="font-display uppercase tracking-widest text-lg text-on-surface-variant hover:text-on-surface transition-colors duration-300" href="/reservas">Reservas</a>
 <a class="font-display uppercase tracking-widest text-lg text-on-surface-variant hover:text-on-surface transition-colors duration-300" href="#historia">Historia</a>
 </div>
-<button class="bg-tertiary-container text-on-tertiary-container px-6 py-2 font-display tracking-widest uppercase hover:opacity-80 transition-opacity">
+<a class="bg-tertiary-container text-on-tertiary-container px-6 py-2 font-display tracking-widest uppercase hover:opacity-80 transition-opacity" href="/reservas">
                 Reservar
-            </button>
+            </a>
 </div>
 </nav>
 <!-- Hero Section -->
@@ -118,8 +117,8 @@
 <div class="relative z-10 text-center px-4 max-w-4xl mx-auto flex flex-col items-center">
 <img alt="Logo El Toro" class="w-64 md:w-96 mb-12 drop-shadow-2xl" src="https://lh3.googleusercontent.com/aida/AP1WRLuO8GSErENP56UCl2L-cky18u2GAChTBQ4vQx-SEOVR7tGCvTmH3IIIl5HaCPZhzb6OroKAkT87qRdCqXe2pL-GBH6uxYZXDaol7y07VdtxoVgAmrPng9H4EZ-BYfbMaUwOZnyWhfs4cwms-CT8dC9aEevXgPoGn4NqsynV07Hs9SX8YleXp2SuxpxNmkVAAeut4p2vlzLPaygGBmw2PkmUmuVt5gm1oRHLHFT8ZnGJKv0lAwPZZWdicwY">
 <div class="flex flex-col md:flex-row gap-6 mt-8">
-<a class="border border-on-surface px-12 py-4 font-display text-xl tracking-[0.2em] uppercase hover:bg-on-surface hover:text-background transition-all duration-500" href="#menu">VER LA CARTA</a>
-<a class="bg-[#F67848] text-[#1A1A1A] px-12 py-4 font-display text-xl tracking-[0.2em] uppercase hover:brightness-110 transition-all duration-500" href="https://wa.me/5491125533950" target="_blank">
+<a class="border border-on-surface px-12 py-4 font-display text-xl tracking-[0.2em] uppercase hover:bg-on-surface hover:text-background transition-all duration-500" href="/carta">VER LA CARTA</a>
+<a class="bg-[#F67848] text-[#1A1A1A] px-12 py-4 font-display text-xl tracking-[0.2em] uppercase hover:brightness-110 transition-all duration-500" href="https://wa.me/5491125533950?text=Hola%2C%20c%C3%B3mo%20est%C3%A1n%3F%20Me%20gustar%C3%ADa%20hacer%20una%20reserva%20en%20El%20Toro" target="_blank" rel="noopener noreferrer">
                     Reservar por WhatsApp
                 </a>
 </div>
@@ -174,112 +173,39 @@
 </div>
 </div>
 </section>
-<!-- Menú Section -->
-<section class="py-32 px-8 bg-surface-container-low" id="menu">
+<!-- Reseñas Section -->
+<section class="py-32 px-8 bg-surface-container-low" id="resenas">
 <div class="max-w-7xl mx-auto">
 <div class="text-center mb-24">
-<h2 class="font-display text-6xl tracking-[0.2em] mb-4">Nuestra Carta</h2>
+<h2 class="font-display text-6xl tracking-[0.2em] mb-4">Lo que dicen nuestros clientes</h2>
 <div class="w-24 h-px bg-tertiary mx-auto opacity-50"></div>
 </div>
-<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-x-20 gap-y-16">
-<!-- Entradas -->
-<div class="space-y-8">
-<h3 class="font-display text-3xl text-tertiary tracking-widest flex items-center gap-4">
-<span class="w-8 h-px bg-tertiary/30"></span>
-                        Entradas
-                    </h3>
-<ul class="space-y-6">
-<li class="flex items-end group">
-<span class="font-display text-xl uppercase tracking-wider group-hover:text-on-surface transition-colors">Provoleta al Hierro</span>
-<div class="dotted-line"></div>
-<span class="font-body text-on-surface-variant">$8.500</span>
-</li>
-<li class="flex items-end group">
-<span class="font-display text-xl uppercase tracking-wider">Chorizo de Campo</span>
-<div class="dotted-line"></div>
-<span class="font-body text-on-surface-variant">$4.200</span>
-</li>
-<li class="flex items-end group">
-<span class="font-display text-xl uppercase tracking-wider">Empanada de Carne</span>
-<div class="dotted-line"></div>
-<span class="font-body text-on-surface-variant">$2.800</span>
-</li>
-<li class="flex items-end group">
-<span class="font-display text-xl uppercase tracking-wider">Mollejas de Corazón</span>
-<div class="dotted-line"></div>
-<span class="font-body text-on-surface-variant">$11.500</span>
-</li>
-</ul>
+<div class="grid md:grid-cols-3 gap-8">
+<!-- Reseña 1 -->
+<div class="bg-surface-container p-10 border-b-2 border-tertiary/40 flex flex-col gap-6">
+<div class="text-tertiary text-2xl tracking-[0.2em] leading-none">★★★★★</div>
+<p class="text-on-surface-variant leading-relaxed font-light italic">"Sin dudas la mejor parrilla de la zona. El ojo de bife estaba en su punto justo y la atención fue impecable de principio a fin. Ya es un clásico para las juntadas con amigos."</p>
+<div class="pt-4 mt-auto border-t border-outline-variant/10">
+<span class="font-display text-xl tracking-widest text-on-surface">Martín Ferreyra</span>
+<p class="text-[10px] uppercase tracking-widest text-on-surface-variant/50 mt-1">Reseña de Google</p>
 </div>
-<!-- Parrilla -->
-<div class="space-y-8">
-<h3 class="font-display text-3xl text-tertiary tracking-widest flex items-center gap-4">
-<span class="w-8 h-px bg-tertiary/30"></span>
-                        Parrilla
-                    </h3>
-<ul class="space-y-6">
-<li class="flex items-end group">
-<div class="flex flex-col">
-<span class="font-display text-xl uppercase tracking-wider">Ojo de Bife (400g)</span>
-<span class="text-[10px] text-tertiary uppercase tracking-widest mt-1">Recomendado</span>
 </div>
-<div class="dotted-line"></div>
-<span class="font-body text-on-surface-variant">$24.000</span>
-</li>
-<li class="flex items-end group">
-<span class="font-display text-xl uppercase tracking-wider">Asado de Tira</span>
-<div class="dotted-line"></div>
-<span class="font-body text-on-surface-variant">$21.500</span>
-</li>
-<li class="flex items-end group">
-<span class="font-display text-xl uppercase tracking-wider">Entraña Selección</span>
-<div class="dotted-line"></div>
-<span class="font-body text-on-surface-variant">$26.800</span>
-</li>
-<li class="flex items-end group">
-<span class="font-display text-xl uppercase tracking-wider">Vacío Fino</span>
-<div class="dotted-line"></div>
-<span class="font-body text-on-surface-variant">$22.000</span>
-</li>
-</ul>
+<!-- Reseña 2 -->
+<div class="bg-surface-container p-10 border-b-2 border-tertiary/40 flex flex-col gap-6">
+<div class="text-tertiary text-2xl tracking-[0.2em] leading-none">★★★★★</div>
+<p class="text-on-surface-variant leading-relaxed font-light italic">"Fuimos a festejar un cumpleaños y superó todas las expectativas. El ambiente es cálido, la carta de vinos excelente y los postres caseros un golazo. Volvemos seguro."</p>
+<div class="pt-4 mt-auto border-t border-outline-variant/10">
+<span class="font-display text-xl tracking-widest text-on-surface">Lucía Bonaventura</span>
+<p class="text-[10px] uppercase tracking-widest text-on-surface-variant/50 mt-1">Reseña de Google</p>
 </div>
-<!-- Guarniciones & Postres -->
-<div class="space-y-12">
-<div class="space-y-8">
-<h3 class="font-display text-3xl text-tertiary tracking-widest flex items-center gap-4">
-<span class="w-8 h-px bg-tertiary/30"></span>
-                            Guarniciones
-                        </h3>
-<ul class="space-y-6">
-<li class="flex items-end group">
-<span class="font-display text-xl uppercase tracking-wider">Papas Fritas El Toro</span>
-<div class="dotted-line"></div>
-<span class="font-body text-on-surface-variant">$4.500</span>
-</li>
-<li class="flex items-end group">
-<span class="font-display text-xl uppercase tracking-wider">Ensalada Mixta</span>
-<div class="dotted-line"></div>
-<span class="font-body text-on-surface-variant">$3.800</span>
-</li>
-</ul>
 </div>
-<div class="space-y-8">
-<h3 class="font-display text-3xl text-tertiary tracking-widest flex items-center gap-4">
-<span class="w-8 h-px bg-tertiary/30"></span>
-                            Postres
-                        </h3>
-<ul class="space-y-6">
-<li class="flex items-end group">
-<span class="font-display text-xl uppercase tracking-wider">Flan con Mixta</span>
-<div class="dotted-line"></div>
-<span class="font-body text-on-surface-variant">$5.200</span>
-</li>
-<li class="flex items-end group">
-<span class="font-display text-xl uppercase tracking-wider">Panqueque Dulce Leche</span>
-<div class="dotted-line"></div>
-<span class="font-body text-on-surface-variant">$6.400</span>
-</li>
-</ul>
+<!-- Reseña 3 -->
+<div class="bg-surface-container p-10 border-b-2 border-tertiary/40 flex flex-col gap-6">
+<div class="text-tertiary text-2xl tracking-[0.2em] leading-none">★★★★★</div>
+<p class="text-on-surface-variant leading-relaxed font-light italic">"Se nota el cuidado en cada detalle, desde el fuego lento hasta la mesa. Pedí el costillar para compartir y no quedó nada. Reservá con tiempo porque se llena rápido."</p>
+<div class="pt-4 mt-auto border-t border-outline-variant/10">
+<span class="font-display text-xl tracking-widest text-on-surface">Diego Salcedo</span>
+<p class="text-[10px] uppercase tracking-widest text-on-surface-variant/50 mt-1">Reseña de Google</p>
 </div>
 </div>
 </div>
@@ -322,10 +248,10 @@
 </div>
 </section>
 <!-- Contacto Section -->
-<section class="py-24 px-8 bg-surface-container-lowest text-center" id="reservas">
+<section class="py-24 px-8 bg-surface-container-lowest text-center" id="contacto">
 <div class="max-w-4xl mx-auto space-y-12">
 <h2 class="font-display text-4xl tracking-widest text-on-surface-variant">¿Planeando una visita?</h2>
-<a class="inline-flex items-center gap-6 bg-tertiary text-on-tertiary px-16 py-8 font-display text-3xl tracking-[0.1em] uppercase hover:scale-105 transition-transform duration-300" href="https://wa.me/5491125533950" target="_blank">
+<a class="inline-flex items-center gap-6 bg-tertiary text-on-tertiary px-16 py-8 font-display text-3xl tracking-[0.1em] uppercase hover:scale-105 transition-transform duration-300" href="https://wa.me/5491125533950?text=Hola%2C%20c%C3%B3mo%20est%C3%A1n%3F%20Me%20gustar%C3%ADa%20hacer%20una%20reserva%20en%20El%20Toro" target="_blank" rel="noopener noreferrer">
 <span class="material-symbols-outlined text-4xl">chat</span>
                 RESERVAR POR WHATSAPP
             </a>

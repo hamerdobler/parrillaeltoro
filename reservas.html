@@ -1,0 +1,161 @@
+<!DOCTYPE html><html class="dark" lang="es"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>PARRILLA EL TORO | Reservas</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Hanken+Grotesk:wght@300;400;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-background": "#e4e3d9",
+                        "outline": "#8e9192",
+                        "surface-variant": "#34352f",
+                        "primary-container": "#1a1a1a",
+                        "tertiary-container": "#360c00",
+                        "surface-container": "#1f201a",
+                        "on-secondary": "#2f312e",
+                        "surface-container-highest": "#34352f",
+                        "surface": "#13140f",
+                        "background": "#13140f",
+                        "surface-container-low": "#1b1c17",
+                        "on-tertiary": "#5b1a00",
+                        "on-surface": "#e4e3d9",
+                        "on-tertiary-container": "#d55f32",
+                        "surface-container-lowest": "#0e0f0a",
+                        "outline-variant": "#444748",
+                        "secondary-container": "#484a46",
+                        "surface-container-high": "#292a25",
+                        "tertiary": "#ffb59b",
+                        "primary": "#c8c6c5",
+                        "on-surface-variant": "#c4c7c7",
+                        "on-primary": "#313030"
+                    },
+                    "fontFamily": {
+                        "headline": ["Bebas Neue"],
+                        "display": ["Bebas Neue"],
+                        "body": ["Hanken Grotesk"],
+                        "label": ["Hanken Grotesk"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Hanken Grotesk', sans-serif; background-color: #13140f; color: #e4e3d9; }
+        .font-display { font-family: 'Bebas Neue', cursive; }
+        .texture-overlay {
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.03;
+            pointer-events: none;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Inputs: solo borde inferior, sin relleno, coherente con DESIGN.md */
+        .field-input {
+            background: transparent;
+            border: 0;
+            border-bottom: 1px solid #8e9192;
+            border-radius: 0;
+            padding: 0.5rem 0;
+            color: #e4e3d9;
+            width: 100%;
+        }
+        .field-input:focus {
+            outline: none;
+            border-bottom-color: #ffb59b;
+            box-shadow: none;
+        }
+        .field-input::placeholder { color: rgba(196,199,199,0.35); }
+        select.field-input option { background-color: #1b1c17; color: #e4e3d9; }
+    </style>
+</head>
+<body class="antialiased selection:bg-tertiary selection:text-on-tertiary">
+<div class="texture-overlay fixed inset-0 z-[100]"></div>
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-background/95 backdrop-blur-md border-b border-outline-variant/20">
+<div class="flex justify-between items-center px-8 py-6 max-w-7xl mx-auto">
+<a class="font-display text-2xl tracking-tighter text-on-surface" href="/">PARRILLA EL TORO</a>
+<div class="hidden md:flex items-center gap-12">
+<a class="font-display uppercase tracking-widest text-lg text-on-surface-variant hover:text-on-surface transition-colors duration-300" href="/carta">La Carta</a>
+<a class="font-display uppercase tracking-widest text-lg text-tertiary font-bold border-b-2 border-tertiary pb-1" href="/reservas">Reservas</a>
+<a class="font-display uppercase tracking-widest text-lg text-on-surface-variant hover:text-on-surface transition-colors duration-300" href="/#historia">Historia</a>
+</div>
+<a class="bg-tertiary-container text-on-tertiary-container px-6 py-2 font-display tracking-widest uppercase hover:opacity-80 transition-opacity" href="/reservas">
+                Reservar
+            </a>
+</div>
+</nav>
+<!-- Formulario de reservas -->
+<main class="min-h-screen pt-40 pb-24 px-8 flex items-center justify-center">
+<div class="w-full max-w-xl">
+<div class="text-center mb-14">
+<div class="w-12 h-1 bg-tertiary mx-auto mb-8"></div>
+<h1 class="font-display text-5xl md:text-7xl tracking-[0.1em] text-on-surface">Reservá tu mesa</h1>
+<p class="text-on-surface-variant font-light mt-4 text-lg">Completá tus datos y te confirmamos por WhatsApp.</p>
+</div>
+<!-- Formulario -->
+<form class="space-y-10" id="reserva-form" novalidate>
+<div class="flex flex-col gap-2">
+<label class="text-xs uppercase tracking-[0.15em] font-semibold text-on-surface-variant" for="nombre">Nombre y Apellido</label>
+<input class="field-input font-body" id="nombre" name="nombre" type="text" placeholder="Juan Pérez" required>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-xs uppercase tracking-[0.15em] font-semibold text-on-surface-variant" for="personas">Cantidad de Personas</label>
+<input class="field-input font-body" id="personas" name="personas" type="number" min="1" max="30" placeholder="4" required>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-xs uppercase tracking-[0.15em] font-semibold text-on-surface-variant" for="telefono">Número de Teléfono</label>
+<input class="field-input font-body" id="telefono" name="telefono" type="tel" placeholder="+54 9 11 2553 3950" required>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-xs uppercase tracking-[0.15em] font-semibold text-on-surface-variant" for="horario">Horario</label>
+<select class="field-input font-body" id="horario" name="horario" required>
+<option value="" disabled selected>Elegí un horario</option>
+<option value="11:00">11:00</option>
+<option value="12:00">12:00</option>
+<option value="13:00">13:00</option>
+<option value="14:00">14:00</option>
+<option value="15:00">15:00</option>
+<option value="16:00">16:00</option>
+<option value="17:00">17:00</option>
+<option value="18:00">18:00</option>
+<option value="19:00">19:00</option>
+<option value="20:00">20:00</option>
+<option value="21:00">21:00</option>
+<option value="22:00">22:00</option>
+<option value="23:00">23:00</option>
+</select>
+</div>
+<button class="w-full bg-tertiary text-on-tertiary px-12 py-4 font-display text-xl tracking-[0.2em] uppercase hover:scale-[1.02] transition-transform duration-300" type="submit">
+                    Enviar
+                </button>
+</form>
+<!-- Confirmación (oculta hasta el submit) -->
+<div class="hidden text-center space-y-10" id="reserva-confirmacion">
+<span class="material-symbols-outlined text-6xl text-tertiary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<p class="text-2xl md:text-3xl font-light text-on-surface leading-relaxed">Gracias por tu reserva. Te vamos a escribir a tu WhatsApp para confirmar la reserva.</p>
+<a class="inline-block border border-on-surface px-12 py-4 font-display text-lg tracking-[0.2em] uppercase hover:bg-on-surface hover:text-background transition-all duration-500" href="/">Volver al inicio</a>
+</div>
+</div>
+</main>
+<script>
+        const form = document.getElementById('reserva-form');
+        const confirmacion = document.getElementById('reserva-confirmacion');
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            if (!form.checkValidity()) {
+                form.reportValidity();
+                return;
+            }
+            // Reserva simulada: ocultamos el formulario y mostramos la confirmación
+            form.classList.add('hidden');
+            confirmacion.classList.remove('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body></html>

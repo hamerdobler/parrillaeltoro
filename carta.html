@@ -1,0 +1,343 @@
+<!DOCTYPE html><html class="dark" lang="es"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>PARRILLA EL TORO | La Carta</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Hanken+Grotesk:wght@300;400;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-background": "#e4e3d9",
+                        "outline": "#8e9192",
+                        "surface-variant": "#34352f",
+                        "primary-container": "#1a1a1a",
+                        "tertiary-container": "#360c00",
+                        "surface-container": "#1f201a",
+                        "on-secondary": "#2f312e",
+                        "surface-container-highest": "#34352f",
+                        "surface": "#13140f",
+                        "background": "#13140f",
+                        "surface-container-low": "#1b1c17",
+                        "on-tertiary": "#5b1a00",
+                        "on-surface": "#e4e3d9",
+                        "on-tertiary-container": "#d55f32",
+                        "surface-container-lowest": "#0e0f0a",
+                        "outline-variant": "#444748",
+                        "secondary-container": "#484a46",
+                        "surface-container-high": "#292a25",
+                        "tertiary": "#ffb59b",
+                        "primary": "#c8c6c5",
+                        "on-surface-variant": "#c4c7c7",
+                        "on-primary": "#313030"
+                    },
+                    "fontFamily": {
+                        "headline": ["Bebas Neue"],
+                        "display": ["Bebas Neue"],
+                        "body": ["Hanken Grotesk"],
+                        "label": ["Hanken Grotesk"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Hanken Grotesk', sans-serif; background-color: #13140f; color: #e4e3d9; }
+        .font-display { font-family: 'Bebas Neue', cursive; }
+        .texture-overlay {
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.03;
+            pointer-events: none;
+        }
+        .dotted-line {
+            border-bottom: 1px dotted #8e9192;
+            flex-grow: 1;
+            margin: 0 12px;
+            opacity: 0.3;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="antialiased selection:bg-tertiary selection:text-on-tertiary">
+<div class="texture-overlay fixed inset-0 z-[100]"></div>
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-background/95 backdrop-blur-md border-b border-outline-variant/20">
+<div class="flex justify-between items-center px-8 py-6 max-w-7xl mx-auto">
+<a class="font-display text-2xl tracking-tighter text-on-surface" href="/">PARRILLA EL TORO</a>
+<div class="hidden md:flex items-center gap-12">
+<a class="font-display uppercase tracking-widest text-lg text-tertiary font-bold border-b-2 border-tertiary pb-1" href="/carta">La Carta</a>
+<a class="font-display uppercase tracking-widest text-lg text-on-surface-variant hover:text-on-surface transition-colors duration-300" href="/reservas">Reservas</a>
+<a class="font-display uppercase tracking-widest text-lg text-on-surface-variant hover:text-on-surface transition-colors duration-300" href="/#historia">Historia</a>
+</div>
+<a class="bg-tertiary-container text-on-tertiary-container px-6 py-2 font-display tracking-widest uppercase hover:opacity-80 transition-opacity" href="/reservas">
+                Reservar
+            </a>
+</div>
+</nav>
+<!-- Header -->
+<header class="pt-40 pb-12 px-8 text-center">
+<div class="w-12 h-1 bg-tertiary mx-auto mb-8"></div>
+<h1 class="font-display text-6xl md:text-8xl tracking-[0.1em] text-on-surface">Nuestra Carta</h1>
+<p class="text-on-surface-variant font-light mt-4 max-w-xl mx-auto text-lg">El ritual del asado, plato por plato. Elegí una categoría.</p>
+</header>
+<!-- Tabs de navegación interna -->
+<div class="sticky top-[81px] z-40 bg-background/95 backdrop-blur-md border-b border-outline-variant/20">
+<div class="max-w-7xl mx-auto px-4">
+<div class="flex gap-1 md:gap-4 overflow-x-auto no-scrollbar py-4 md:justify-center">
+<a class="tab-link shrink-0 font-display uppercase tracking-widest text-sm md:text-base px-4 py-2 border-b-2 border-tertiary text-tertiary transition-colors" data-tab="entradas" href="#entradas">Entradas</a>
+<a class="tab-link shrink-0 font-display uppercase tracking-widest text-sm md:text-base px-4 py-2 border-b-2 border-transparent text-on-surface-variant hover:text-on-surface transition-colors" data-tab="cortes" href="#cortes">Cortes de Carne</a>
+<a class="tab-link shrink-0 font-display uppercase tracking-widest text-sm md:text-base px-4 py-2 border-b-2 border-transparent text-on-surface-variant hover:text-on-surface transition-colors" data-tab="pastas" href="#pastas">Pastas</a>
+<a class="tab-link shrink-0 font-display uppercase tracking-widest text-sm md:text-base px-4 py-2 border-b-2 border-transparent text-on-surface-variant hover:text-on-surface transition-colors" data-tab="postres" href="#postres">Postres</a>
+<a class="tab-link shrink-0 font-display uppercase tracking-widest text-sm md:text-base px-4 py-2 border-b-2 border-transparent text-on-surface-variant hover:text-on-surface transition-colors" data-tab="bebidas" href="#bebidas">Bebidas</a>
+<a class="tab-link shrink-0 font-display uppercase tracking-widest text-sm md:text-base px-4 py-2 border-b-2 border-transparent text-on-surface-variant hover:text-on-surface transition-colors" data-tab="vinos" href="#vinos">Vinos</a>
+</div>
+</div>
+</div>
+<!-- Secciones -->
+<main class="pb-24">
+<!-- Entradas -->
+<section class="scroll-mt-[160px] max-w-4xl mx-auto px-8 py-16" id="entradas">
+<h2 class="font-display text-4xl md:text-5xl text-tertiary tracking-widest flex items-center gap-4 mb-10">
+<span class="w-10 h-px bg-tertiary/40"></span>Entradas
+</h2>
+<ul class="space-y-6">
+<li class="flex items-end group">
+<span class="font-display text-xl uppercase tracking-wider group-hover:text-on-surface transition-colors">Provoleta al Hierro</span>
+<div class="dotted-line"></div>
+<span class="font-body text-on-surface-variant whitespace-nowrap">$9.500</span>
+</li>
+<li class="flex items-end group">
+<span class="font-display text-xl uppercase tracking-wider group-hover:text-on-surface transition-colors">Chorizo de Campo</span>
+<div class="dotted-line"></div>
+<span class="font-body text-on-surface-variant whitespace-nowrap">$7.000</span>
+</li>
+<li class="flex items-end group">
+<span class="font-display text-xl uppercase tracking-wider group-hover:text-on-surface transition-colors">Empanadas de Carne (x4)</span>
+<div class="dotted-line"></div>
+<span class="font-body text-on-surface-variant whitespace-nowrap">$8.500</span>
+</li>
+<li class="flex items-end group">
+<span class="font-display text-xl uppercase tracking-wider group-hover:text-on-surface transition-colors">Mollejas de Corazón</span>
+<div class="dotted-line"></div>
+<span class="font-body text-on-surface-variant whitespace-nowrap">$12.500</span>
+</li>
+<li class="flex items-end group">
+<span class="font-display text-xl uppercase tracking-wider group-hover:text-on-surface transition-colors">Tabla de Fiambres y Quesos</span>
+<div class="dotted-line"></div>
+<span class="font-body text-on-surface-variant whitespace-nowrap">$15.000</span>
+</li>
+</ul>
+</section>
+<!-- Cortes de Carne -->
+<section class="scroll-mt-[160px] max-w-4xl mx-auto px-8 py-16" id="cortes">
+<h2 class="font-display text-4xl md:text-5xl text-tertiary tracking-widest flex items-center gap-4 mb-10">
+<span class="w-10 h-px bg-tertiary/40"></span>Cortes de Carne
+</h2>
+<ul class="space-y-6">
+<li class="flex items-end group">
+<span class="font-display text-xl uppercase tracking-wider group-hover:text-on-surface transition-colors">Ojo de Bife (400g)</span>
+<div class="dotted-line"></div>
+<span class="font-body text-on-surface-variant whitespace-nowrap">$32.000</span>
+</li>
+<li class="flex items-end group">
+<span class="font-display text-xl uppercase tracking-wider group-hover:text-on-surface transition-colors">Asado de Tira</span>
+<div class="dotted-line"></div>
+<span class="font-body text-on-surface-variant whitespace-nowrap">$28.500</span>
+</li>
+<li class="flex items-end group">
+<span class="font-display text-xl uppercase tracking-wider group-hover:text-on-surface transition-colors">Entraña Selección</span>
+<div class="dotted-line"></div>
+<span class="font-body text-on-surface-variant whitespace-nowrap">$34.800</span>
+</li>
+<li class="flex items-end group">
+<span class="font-display text-xl uppercase tracking-wider group-hover:text-on-surface transition-colors">Vacío Fino</span>
+<div class="dotted-line"></div>
+<span class="font-body text-on-surface-variant whitespace-nowrap">$27.000</span>
+</li>
+<li class="flex items-end group">
+<span class="font-display text-xl uppercase tracking-wider group-hover:text-on-surface transition-colors">Bife de Chorizo</span>
+<div class="dotted-line"></div>
+<span class="font-body text-on-surface-variant whitespace-nowrap">$30.500</span>
+</li>
+<li class="flex items-end group">
+<span class="font-display text-xl uppercase tracking-wider group-hover:text-on-surface transition-colors">Colita de Cuadril</span>
+<div class="dotted-line"></div>
+<span class="font-body text-on-surface-variant whitespace-nowrap">$29.000</span>
+</li>
+<li class="flex items-end group">
+<div class="flex flex-col">
+<span class="font-display text-xl uppercase tracking-wider group-hover:text-on-surface transition-colors">Costillar Ahumado</span>
+<span class="text-[10px] text-on-surface-variant/60 uppercase tracking-widest mt-1">Para compartir · 2-3 personas</span>
+</div>
+<div class="dotted-line"></div>
+<span class="font-body text-on-surface-variant whitespace-nowrap">$50.000</span>
+</li>
+<li class="flex items-end group">
+<span class="font-display text-xl uppercase tracking-wider group-hover:text-on-surface transition-colors">Matambrito a la Parrilla</span>
+<div class="dotted-line"></div>
+<span class="font-body text-on-surface-variant whitespace-nowrap">$25.000</span>
+</li>
+</ul>
+</section>
+<!-- Pastas -->
+<section class="scroll-mt-[160px] max-w-4xl mx-auto px-8 py-16" id="pastas">
+<h2 class="font-display text-4xl md:text-5xl text-tertiary tracking-widest flex items-center gap-4 mb-10">
+<span class="w-10 h-px bg-tertiary/40"></span>Pastas
+</h2>
+<ul class="space-y-6">
+<li class="flex items-end group">
+<span class="font-display text-xl uppercase tracking-wider group-hover:text-on-surface transition-colors">Sorrentinos de Jamón y Queso</span>
+<div class="dotted-line"></div>
+<span class="font-body text-on-surface-variant whitespace-nowrap">$16.500</span>
+</li>
+<li class="flex items-end group">
+<div class="flex flex-col">
+<span class="font-display text-xl uppercase tracking-wider group-hover:text-on-surface transition-colors">Ñoquis Caseros</span>
+<span class="text-[10px] text-on-surface-variant/60 uppercase tracking-widest mt-1">Salsa a elección</span>
+</div>
+<div class="dotted-line"></div>
+<span class="font-body text-on-surface-variant whitespace-nowrap">$14.800</span>
+</li>
+<li class="flex items-end group">
+<span class="font-display text-xl uppercase tracking-wider group-hover:text-on-surface transition-colors">Ravioles de Verdura</span>
+<div class="dotted-line"></div>
+<span class="font-body text-on-surface-variant whitespace-nowrap">$15.200</span>
+</li>
+<li class="flex items-end group">
+<span class="font-display text-xl uppercase tracking-wider group-hover:text-on-surface transition-colors">Canelones de Carne</span>
+<div class="dotted-line"></div>
+<span class="font-body text-on-surface-variant whitespace-nowrap">$17.000</span>
+</li>
+</ul>
+</section>
+<!-- Postres -->
+<section class="scroll-mt-[160px] max-w-4xl mx-auto px-8 py-16" id="postres">
+<h2 class="font-display text-4xl md:text-5xl text-tertiary tracking-widest flex items-center gap-4 mb-10">
+<span class="w-10 h-px bg-tertiary/40"></span>Postres
+</h2>
+<ul class="space-y-6">
+<li class="flex items-end group">
+<span class="font-display text-xl uppercase tracking-wider group-hover:text-on-surface transition-colors">Flan Casero con Dulce de Leche</span>
+<div class="dotted-line"></div>
+<span class="font-body text-on-surface-variant whitespace-nowrap">$6.800</span>
+</li>
+<li class="flex items-end group">
+<span class="font-display text-xl uppercase tracking-wider group-hover:text-on-surface transition-colors">Panqueques con Dulce de Leche</span>
+<div class="dotted-line"></div>
+<span class="font-body text-on-surface-variant whitespace-nowrap">$7.200</span>
+</li>
+<li class="flex items-end group">
+<span class="font-display text-xl uppercase tracking-wider group-hover:text-on-surface transition-colors">Helado Artesanal (2 bochas)</span>
+<div class="dotted-line"></div>
+<span class="font-body text-on-surface-variant whitespace-nowrap">$5.800</span>
+</li>
+<li class="flex items-end group">
+<span class="font-display text-xl uppercase tracking-wider group-hover:text-on-surface transition-colors">Volcán de Chocolate</span>
+<div class="dotted-line"></div>
+<span class="font-body text-on-surface-variant whitespace-nowrap">$8.900</span>
+</li>
+</ul>
+</section>
+<!-- Bebidas -->
+<section class="scroll-mt-[160px] max-w-4xl mx-auto px-8 py-16" id="bebidas">
+<h2 class="font-display text-4xl md:text-5xl text-tertiary tracking-widest flex items-center gap-4 mb-10">
+<span class="w-10 h-px bg-tertiary/40"></span>Bebidas
+</h2>
+<ul class="space-y-6">
+<li class="flex items-end group">
+<span class="font-display text-xl uppercase tracking-wider group-hover:text-on-surface transition-colors">Agua Mineral</span>
+<div class="dotted-line"></div>
+<span class="font-body text-on-surface-variant whitespace-nowrap">$5.000</span>
+</li>
+<li class="flex items-end group">
+<span class="font-display text-xl uppercase tracking-wider group-hover:text-on-surface transition-colors">Gaseosa Línea Coca-Cola</span>
+<div class="dotted-line"></div>
+<span class="font-body text-on-surface-variant whitespace-nowrap">$5.500</span>
+</li>
+<li class="flex items-end group">
+<span class="font-display text-xl uppercase tracking-wider group-hover:text-on-surface transition-colors">Cerveza Artesanal IPA</span>
+<div class="dotted-line"></div>
+<span class="font-body text-on-surface-variant whitespace-nowrap">$7.500</span>
+</li>
+<li class="flex items-end group">
+<span class="font-display text-xl uppercase tracking-wider group-hover:text-on-surface transition-colors">Limonada Casera</span>
+<div class="dotted-line"></div>
+<span class="font-body text-on-surface-variant whitespace-nowrap">$6.000</span>
+</li>
+</ul>
+</section>
+<!-- Vinos -->
+<section class="scroll-mt-[160px] max-w-4xl mx-auto px-8 py-16" id="vinos">
+<h2 class="font-display text-4xl md:text-5xl text-tertiary tracking-widest flex items-center gap-4 mb-10">
+<span class="w-10 h-px bg-tertiary/40"></span>Vinos
+</h2>
+<ul class="space-y-6">
+<li class="flex items-end group">
+<span class="font-display text-xl uppercase tracking-wider group-hover:text-on-surface transition-colors">Malbec Reserva (botella)</span>
+<div class="dotted-line"></div>
+<span class="font-body text-on-surface-variant whitespace-nowrap">$38.000</span>
+</li>
+<li class="flex items-end group">
+<span class="font-display text-xl uppercase tracking-wider group-hover:text-on-surface transition-colors">Cabernet Sauvignon (botella)</span>
+<div class="dotted-line"></div>
+<span class="font-body text-on-surface-variant whitespace-nowrap">$35.000</span>
+</li>
+<li class="flex items-end group">
+<span class="font-display text-xl uppercase tracking-wider group-hover:text-on-surface transition-colors">Chardonnay (botella)</span>
+<div class="dotted-line"></div>
+<span class="font-body text-on-surface-variant whitespace-nowrap">$32.000</span>
+</li>
+<li class="flex items-end group">
+<span class="font-display text-xl uppercase tracking-wider group-hover:text-on-surface transition-colors">Espumante Extra Brut (botella)</span>
+<div class="dotted-line"></div>
+<span class="font-body text-on-surface-variant whitespace-nowrap">$40.000</span>
+</li>
+</ul>
+</section>
+<div class="text-center pt-8">
+<a class="inline-block border border-on-surface px-12 py-4 font-display text-lg tracking-[0.2em] uppercase hover:bg-on-surface hover:text-background transition-all duration-500" href="/reservas">Reservar una mesa</a>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest w-full py-12 px-8 border-t border-outline-variant/10">
+<div class="flex flex-col md:flex-row justify-between items-center gap-8 max-w-7xl mx-auto">
+<a class="font-display text-xl text-primary" href="/">PARRILLA EL TORO</a>
+<div class="flex gap-8 font-body text-xs uppercase tracking-widest">
+<a class="text-on-surface-variant hover:text-tertiary transition-colors" href="/carta">La Carta</a>
+<a class="text-on-surface-variant hover:text-tertiary transition-colors" href="/reservas">Reservas</a>
+<a class="text-on-surface-variant hover:text-tertiary transition-colors" href="/#historia">Historia</a>
+</div>
+<p class="font-body text-xs uppercase tracking-widest text-on-surface-variant">
+                © 2024 PARRILLA EL TORO. TRADICIÓN Y FUEGO.
+            </p>
+</div>
+</footer>
+<script>
+        // Resalta el tab activo según la sección visible
+        const tabLinks = document.querySelectorAll('.tab-link');
+        const sections = document.querySelectorAll('main section[id]');
+        function setActive(id) {
+            tabLinks.forEach(l => {
+                const active = l.dataset.tab === id;
+                l.classList.toggle('text-tertiary', active);
+                l.classList.toggle('border-tertiary', active);
+                l.classList.toggle('text-on-surface-variant', !active);
+                l.classList.toggle('border-transparent', !active);
+            });
+        }
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) setActive(e.target.id); });
+        }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+        sections.forEach(s => observer.observe(s));
+        // Feedback inmediato al hacer click en un tab
+        tabLinks.forEach(l => l.addEventListener('click', () => setActive(l.dataset.tab)));
+    </script>
+</body></html>

@@ -36,6 +36,12 @@ while ($listener.IsListening) {
         if ([string]::IsNullOrEmpty($relPath)) { $relPath = 'index.html' }
         $fullPath = Join-Path $Root $relPath
 
+        # Clean URLs: /carta -> carta.html (igual que Vercel cleanUrls)
+        if (-not (Test-Path $fullPath) -and -not [System.IO.Path]::HasExtension($fullPath)) {
+            $htmlCandidate = "$fullPath.html"
+            if (Test-Path $htmlCandidate) { $fullPath = $htmlCandidate }
+        }
+
         if ((Test-Path $fullPath) -and -not (Get-Item $fullPath).PSIsContainer) {
             $ext = [System.IO.Path]::GetExtension($fullPath).ToLower()
             $ct = $mime[$ext]
