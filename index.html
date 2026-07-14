@@ -1,0 +1,364 @@
+<!DOCTYPE html><html class="dark" lang="es" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>PARRILLA EL TORO | Tradición y Fuego</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Hanken+Grotesk:wght@300;400;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-tint": "#c8c6c5",
+                        "on-tertiary-fixed": "#380d00",
+                        "on-background": "#e4e3d9",
+                        "outline": "#8e9192",
+                        "surface-variant": "#34352f",
+                        "primary-container": "#1a1a1a",
+                        "inverse-primary": "#5f5e5e",
+                        "tertiary-container": "#360c00",
+                        "surface-container": "#1f201a",
+                        "secondary-fixed": "#e3e3de",
+                        "on-secondary-fixed": "#1a1c19",
+                        "on-secondary": "#2f312e",
+                        "surface-container-highest": "#34352f",
+                        "surface": "#13140f",
+                        "on-error-container": "#ffdad6",
+                        "background": "#13140f",
+                        "surface-container-low": "#1b1c17",
+                        "on-primary-fixed": "#1c1b1b",
+                        "on-tertiary": "#5b1a00",
+                        "on-surface": "#e4e3d9",
+                        "on-tertiary-container": "#d55f32",
+                        "surface-container-lowest": "#0e0f0a",
+                        "surface-dim": "#13140f",
+                        "inverse-surface": "#e4e3d9",
+                        "inverse-on-surface": "#30312b",
+                        "outline-variant": "#444748",
+                        "tertiary-fixed": "#ffdbcf",
+                        "on-error": "#690005",
+                        "error-container": "#93000a",
+                        "secondary-container": "#484a46",
+                        "surface-container-high": "#292a25",
+                        "on-secondary-container": "#b8b9b4",
+                        "on-tertiary-fixed-variant": "#812800",
+                        "on-secondary-fixed-variant": "#454744",
+                        "tertiary": "#ffb59b",
+                        "primary": "#c8c6c5",
+                        "tertiary-fixed-dim": "#ffb59b",
+                        "error": "#ffb4ab",
+                        "primary-fixed": "#e5e2e1",
+                        "secondary-fixed-dim": "#c6c7c2",
+                        "secondary": "#c6c7c2",
+                        "on-primary-fixed-variant": "#474746",
+                        "surface-bright": "#393a33",
+                        "on-surface-variant": "#c4c7c7",
+                        "on-primary": "#313030",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "on-primary-container": "#848282"
+                    },
+                    "fontFamily": {
+                        "headline": ["Bebas Neue"],
+                        "display": ["Bebas Neue"],
+                        "body": ["Hanken Grotesk"],
+                        "label": ["Hanken Grotesk"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Hanken Grotesk', sans-serif; background-color: #13140f; color: #e4e3d9; }
+        .font-display { font-family: 'Bebas Neue', cursive; }
+        .texture-overlay {
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.03;
+            pointer-events: none;
+        }
+        .hero-overlay {
+            background: linear-gradient(to bottom, rgba(19, 20, 15, 0.4) 0%, rgba(19, 20, 15, 0.9) 100%);
+        }
+        .dotted-line {
+            border-bottom: 1px dotted #8e9192;
+            flex-grow: 1;
+            margin: 0 12px;
+            opacity: 0.3;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-tertiary selection:text-on-tertiary">
+<div class="texture-overlay fixed inset-0 z-[100]"></div>
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-background/95 dark:bg-background/95 backdrop-blur-md border-b border-outline-variant/20">
+<div class="flex justify-between items-center px-8 py-6 max-w-7xl mx-auto">
+<span class="font-display text-2xl tracking-tighter text-on-surface dark:text-on-surface">PARRILLA EL TORO</span>
+<div class="hidden md:flex items-center gap-12">
+<a class="font-display uppercase tracking-widest text-lg text-tertiary font-bold border-b-2 border-tertiary pb-1" href="#menu">Menu</a>
+<a class="font-display uppercase tracking-widest text-lg text-on-surface-variant hover:text-on-surface transition-colors duration-300" href="#reservas">Reservas</a>
+<a class="font-display uppercase tracking-widest text-lg text-on-surface-variant hover:text-on-surface transition-colors duration-300" href="#ubicacion">LA CARTA</a>
+<a class="font-display uppercase tracking-widest text-lg text-on-surface-variant hover:text-on-surface transition-colors duration-300" href="#historia">Historia</a>
+</div>
+<button class="bg-tertiary-container text-on-tertiary-container px-6 py-2 font-display tracking-widest uppercase hover:opacity-80 transition-opacity">
+                Reservar
+            </button>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative h-screen w-full flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Hero background" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLt7VlLlW7Sl3PnkLwtR-0HuK0AXElMQdb5dTBVqMWtoA7nKRELilCZBUDxEg3NYXPUr5qifKFqU8rppM1QRWQNmQEsEEV1SwMXbw797cT8LzTv_ID1jXcuDYACuyzXGV-Dz_Eix8zhkgNCW_djNz7ThrE004VtqXJsy72H-LroKQFpxJMPsgYOfN1d6VkMBb0LfyztlV9dx73WdhUMfgoIJCwhnr0kYD2G1A-fWnIkCrw6ALxIeUzrL_xt9">
+<div class="absolute inset-0 hero-overlay"></div>
+</div>
+<div class="relative z-10 text-center px-4 max-w-4xl mx-auto flex flex-col items-center">
+<img alt="Logo El Toro" class="w-64 md:w-96 mb-12 drop-shadow-2xl" src="https://lh3.googleusercontent.com/aida/AP1WRLuO8GSErENP56UCl2L-cky18u2GAChTBQ4vQx-SEOVR7tGCvTmH3IIIl5HaCPZhzb6OroKAkT87qRdCqXe2pL-GBH6uxYZXDaol7y07VdtxoVgAmrPng9H4EZ-BYfbMaUwOZnyWhfs4cwms-CT8dC9aEevXgPoGn4NqsynV07Hs9SX8YleXp2SuxpxNmkVAAeut4p2vlzLPaygGBmw2PkmUmuVt5gm1oRHLHFT8ZnGJKv0lAwPZZWdicwY">
+<div class="flex flex-col md:flex-row gap-6 mt-8">
+<a class="border border-on-surface px-12 py-4 font-display text-xl tracking-[0.2em] uppercase hover:bg-on-surface hover:text-background transition-all duration-500" href="#menu">VER LA CARTA</a>
+<a class="bg-[#F67848] text-[#1A1A1A] px-12 py-4 font-display text-xl tracking-[0.2em] uppercase hover:brightness-110 transition-all duration-500" href="https://wa.me/5491125533950" target="_blank">
+                    Reservar por WhatsApp
+                </a>
+</div>
+</div>
+</section>
+<!-- Nosotros Section -->
+<section class="py-32 px-8 max-w-7xl mx-auto" id="historia">
+<div class="grid md:grid-cols-2 gap-24 items-start">
+<div class="space-y-8">
+<div class="w-12 h-1 bg-tertiary"></div>
+<h2 class="font-display text-6xl md:text-8xl leading-tight text-on-surface">Tradición y <br><span class="italic font-light">fuego lento.</span></h2>
+</div>
+<div class="space-y-8 pt-4">
+<p class="text-xl text-on-surface-variant leading-relaxed font-light">
+                    En Parrilla El Toro, el ritual comienza mucho antes de que el primer comensal cruce nuestra puerta. Seleccionamos cuidadosamente las maderas de quebracho para lograr esa brasa perfecta que honra la calidad de nuestros cortes.
+                </p>
+<p class="text-xl text-on-surface-variant leading-relaxed font-light">
+                    Nuestra historia es la del asado argentino elevado a su máxima expresión. Un espacio donde el tiempo se detiene y la paciencia es el ingrediente secreto detrás de cada bocado. No es solo comida; es el culto al fuego y la hospitalidad.
+                </p>
+<div class="pt-8">
+<span class="text-tertiary font-display tracking-widest text-sm border-l-2 border-tertiary pl-4">EL RITUAL DEL ASADO</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Galería de Comidas -->
+<section class="py-16 px-8 max-w-full">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+<div class="group relative overflow-hidden aspect-[4/5] bg-surface-container">
+<img alt="Vinos" class="w-full h-full object-cover opacity-80 group-hover:scale-110 group-hover:opacity-100 transition-all duration-700" src="https://lh3.googleusercontent.com/aida/AP1WRLvaNy7Yw7VugoghSIuCZDcR-X1A8SDorwaoODzG-SUTy1Wv_Fvaoep6wqr1QNI_Xzj-rZez4RkVSDXN_3AUnFt71M331gedsMmVkIjt1a9alWH9-kKzGn3eJT1W2Bf2d0zVXENN92xx9Mhvb6cYf7q6g9YatEnqEDPvxWdkD6Jk4rTEf3ejwYDGECgvMMMXR7hEa44da5cARH5M1EBgdRoRYM9eVh2eaWVAUYF8l_0upL9215p0fv5qKZ14">
+<div class="absolute inset-0 flex items-end p-8 bg-gradient-to-t from-background/80 to-transparent">
+<h3 class="font-display text-3xl tracking-widest text-on-surface group-hover:translate-x-2 transition-transform duration-500">Vinos</h3>
+</div>
+</div>
+<div class="group relative overflow-hidden aspect-[4/5] bg-surface-container">
+<img alt="Cortes" class="w-full h-full object-cover opacity-80 group-hover:scale-110 group-hover:opacity-100 transition-all duration-700" src="https://lh3.googleusercontent.com/aida/AP1WRLvNd4-1u3LCcAaoRecVVGQu_7z0qWSddy19fGEHkgtW_IJD7RmQ6KTLEDhgUhu_rZJQvR89j_KWoQFOZbVcLViMuc7f-IbB8cbRM9S3cDsBZm8-Mk83Q_RPSM1mT-yPj_N3gVt3_h40o5ncdbyzhsH9R1SMuVJtpQqCpHZtzQi0ODba14iLblOWc69T8NP0FWyxs6bR0usQMPcxlE6lkRFjes-GxBm11NVtyb4lkdkT8bid_q2W8pfq5ee9">
+<div class="absolute inset-0 flex items-end p-8 bg-gradient-to-t from-background/80 to-transparent">
+<h3 class="font-display text-3xl tracking-widest text-on-surface group-hover:translate-x-2 transition-transform duration-500">Cortes</h3>
+</div>
+</div>
+<div class="group relative overflow-hidden aspect-[4/5] bg-surface-container">
+<img alt="El Asado" class="w-full h-full object-cover opacity-80 group-hover:scale-110 group-hover:opacity-100 transition-all duration-700" src="https://lh3.googleusercontent.com/aida/AP1WRLtv65Y6qJOUFZkvDdTOHiJWPnQzyPsDqVWjwzFNY7ImMT7NrTZhQn9CwXEqHKFOKAafqIbuK9Af0nZOXlhXPrg0Un5Igw6wTsYEVif_Fo6bmcC4H66nHb2Dp4Tem0OSmXvCfv2FX9DI8cPKIw1SOJmi24kVa-5XiNH3TqosRevhsNpzlYEjLOF6V_CBQ_vTI9NPCO7Ak0w84cNhZJmG4Qqj3zgStMDOGiTxDd4XBXSpkxf9OX5Za8RVMww">
+<div class="absolute inset-0 flex items-end p-8 bg-gradient-to-t from-background/80 to-transparent">
+<h3 class="font-display text-3xl tracking-widest text-on-surface group-hover:translate-x-2 transition-transform duration-500">El Asado</h3>
+</div>
+</div>
+<div class="group relative overflow-hidden aspect-[4/5] bg-surface-container">
+<img alt="Postres" class="w-full h-full object-cover opacity-80 group-hover:scale-110 group-hover:opacity-100 transition-all duration-700" src="https://lh3.googleusercontent.com/aida/AP1WRLvRopa5RH3gn5mYovQGU99h1RkEsFk8sT-FxIwFAwGv_TQlDQsGNHf_kX8ehhpePC2oPElm1y_Do466PshXRJpudpnMGkV_PBFxVKcqDe4HhAKeFpKJDg4ldO9bTaCYGTikyScnIj0i6WGzXj_SeQbiYYSdrh15J1e5MtbwgmU-ZyfMTpQXMTIx3YqiBOIKw3PRwtbxpNVKO2cZXvvOSfPnUfjBOwntXdGp2PEc4PksjHAty6aOfwsBBH7d">
+<div class="absolute inset-0 flex items-end p-8 bg-gradient-to-t from-background/80 to-transparent">
+<h3 class="font-display text-3xl tracking-widest text-on-surface group-hover:translate-x-2 transition-transform duration-500">Postres</h3>
+</div>
+</div>
+</div>
+</section>
+<!-- Menú Section -->
+<section class="py-32 px-8 bg-surface-container-low" id="menu">
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-24">
+<h2 class="font-display text-6xl tracking-[0.2em] mb-4">Nuestra Carta</h2>
+<div class="w-24 h-px bg-tertiary mx-auto opacity-50"></div>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-x-20 gap-y-16">
+<!-- Entradas -->
+<div class="space-y-8">
+<h3 class="font-display text-3xl text-tertiary tracking-widest flex items-center gap-4">
+<span class="w-8 h-px bg-tertiary/30"></span>
+                        Entradas
+                    </h3>
+<ul class="space-y-6">
+<li class="flex items-end group">
+<span class="font-display text-xl uppercase tracking-wider group-hover:text-on-surface transition-colors">Provoleta al Hierro</span>
+<div class="dotted-line"></div>
+<span class="font-body text-on-surface-variant">$8.500</span>
+</li>
+<li class="flex items-end group">
+<span class="font-display text-xl uppercase tracking-wider">Chorizo de Campo</span>
+<div class="dotted-line"></div>
+<span class="font-body text-on-surface-variant">$4.200</span>
+</li>
+<li class="flex items-end group">
+<span class="font-display text-xl uppercase tracking-wider">Empanada de Carne</span>
+<div class="dotted-line"></div>
+<span class="font-body text-on-surface-variant">$2.800</span>
+</li>
+<li class="flex items-end group">
+<span class="font-display text-xl uppercase tracking-wider">Mollejas de Corazón</span>
+<div class="dotted-line"></div>
+<span class="font-body text-on-surface-variant">$11.500</span>
+</li>
+</ul>
+</div>
+<!-- Parrilla -->
+<div class="space-y-8">
+<h3 class="font-display text-3xl text-tertiary tracking-widest flex items-center gap-4">
+<span class="w-8 h-px bg-tertiary/30"></span>
+                        Parrilla
+                    </h3>
+<ul class="space-y-6">
+<li class="flex items-end group">
+<div class="flex flex-col">
+<span class="font-display text-xl uppercase tracking-wider">Ojo de Bife (400g)</span>
+<span class="text-[10px] text-tertiary uppercase tracking-widest mt-1">Recomendado</span>
+</div>
+<div class="dotted-line"></div>
+<span class="font-body text-on-surface-variant">$24.000</span>
+</li>
+<li class="flex items-end group">
+<span class="font-display text-xl uppercase tracking-wider">Asado de Tira</span>
+<div class="dotted-line"></div>
+<span class="font-body text-on-surface-variant">$21.500</span>
+</li>
+<li class="flex items-end group">
+<span class="font-display text-xl uppercase tracking-wider">Entraña Selección</span>
+<div class="dotted-line"></div>
+<span class="font-body text-on-surface-variant">$26.800</span>
+</li>
+<li class="flex items-end group">
+<span class="font-display text-xl uppercase tracking-wider">Vacío Fino</span>
+<div class="dotted-line"></div>
+<span class="font-body text-on-surface-variant">$22.000</span>
+</li>
+</ul>
+</div>
+<!-- Guarniciones & Postres -->
+<div class="space-y-12">
+<div class="space-y-8">
+<h3 class="font-display text-3xl text-tertiary tracking-widest flex items-center gap-4">
+<span class="w-8 h-px bg-tertiary/30"></span>
+                            Guarniciones
+                        </h3>
+<ul class="space-y-6">
+<li class="flex items-end group">
+<span class="font-display text-xl uppercase tracking-wider">Papas Fritas El Toro</span>
+<div class="dotted-line"></div>
+<span class="font-body text-on-surface-variant">$4.500</span>
+</li>
+<li class="flex items-end group">
+<span class="font-display text-xl uppercase tracking-wider">Ensalada Mixta</span>
+<div class="dotted-line"></div>
+<span class="font-body text-on-surface-variant">$3.800</span>
+</li>
+</ul>
+</div>
+<div class="space-y-8">
+<h3 class="font-display text-3xl text-tertiary tracking-widest flex items-center gap-4">
+<span class="w-8 h-px bg-tertiary/30"></span>
+                            Postres
+                        </h3>
+<ul class="space-y-6">
+<li class="flex items-end group">
+<span class="font-display text-xl uppercase tracking-wider">Flan con Mixta</span>
+<div class="dotted-line"></div>
+<span class="font-body text-on-surface-variant">$5.200</span>
+</li>
+<li class="flex items-end group">
+<span class="font-display text-xl uppercase tracking-wider">Panqueque Dulce Leche</span>
+<div class="dotted-line"></div>
+<span class="font-body text-on-surface-variant">$6.400</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Ambiente Section -->
+<section class="relative h-[60vh] w-full flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Restaurante Ambiente" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLvQnhJMJ4Qcy4lKXgwcSp9BnAVu57p0-A-y15dgD59ovR5aREGz_9jBa1INTTTVw00vYiQrD4kMeeX0Mzwq-lQPAU17vFdEh_TQTITPtNa6UJvoVZH8crD74ANxyRNGVkeVq6HoJ0zZz9ukecLpStXsnSW5nQk_HraVBsyXLJ2DCDtUFRNsJ6gGhmyEcmHzpqHGiKOKsI1KYDzzKc6o1d36dZMXR7x9m60i2yLjQsQQIJspdb63mXqeY3s">
+<div class="absolute inset-0 bg-background/60"></div>
+</div>
+<div class="relative z-10 text-center">
+<h2 class="font-display text-5xl md:text-7xl tracking-[0.3em] uppercase drop-shadow-lg">Sentí el calor del hogar</h2>
+<div class="mt-8 flex justify-center">
+<span class="material-symbols-outlined text-4xl animate-pulse text-tertiary" style="font-variation-settings: 'FILL' 1;">fireplace</span>
+</div>
+</div>
+</section>
+<!-- Horarios y Ubicación -->
+<section class="py-32 px-8 max-w-7xl mx-auto" id="ubicacion">
+<div class="grid md:grid-cols-2 gap-12">
+<div class="bg-surface-container-low p-16 flex flex-col items-center text-center space-y-8 border-b-2 border-tertiary">
+<span class="material-symbols-outlined text-5xl text-tertiary">schedule</span>
+<h3 class="font-display text-4xl tracking-widest">Nuestros Horarios</h3>
+<div class="space-y-2 font-light text-on-surface-variant text-lg">
+<p class="">Lunes a Jueves: 11:00 — 16:00 / 20:00 — 00:00</p>
+<p class="">Viernes y Sábados: 11:00 — 01:00&nbsp;</p>
+<p class="">Domingos: 11:00 — 23:00</p>
+</div>
+</div>
+<div class="bg-surface-container-low p-16 flex flex-col items-center text-center space-y-8 border-b-2 border-tertiary">
+<span class="material-symbols-outlined text-5xl text-tertiary">location_on</span>
+<h3 class="font-display text-4xl tracking-widest">Dónde Encontrarnos</h3>
+<div class="space-y-2 font-light text-on-surface-variant text-lg">
+<p class="">Av. del Libertador 12450</p>
+<p class="">Martínez, Buenos Aires</p>
+<a class="inline-block mt-4 text-tertiary border-b border-tertiary/30 pb-1 font-display tracking-widest hover:text-on-surface transition-colors" href="#">Abrir en Mapas</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Contacto Section -->
+<section class="py-24 px-8 bg-surface-container-lowest text-center" id="reservas">
+<div class="max-w-4xl mx-auto space-y-12">
+<h2 class="font-display text-4xl tracking-widest text-on-surface-variant">¿Planeando una visita?</h2>
+<a class="inline-flex items-center gap-6 bg-tertiary text-on-tertiary px-16 py-8 font-display text-3xl tracking-[0.1em] uppercase hover:scale-105 transition-transform duration-300" href="https://wa.me/5491125533950" target="_blank">
+<span class="material-symbols-outlined text-4xl">chat</span>
+                RESERVAR POR WHATSAPP
+            </a>
+<p class="text-on-surface-variant/60 font-light italic">
+                Recomendamos reservar con 48hs de anticipación para fines de semana.
+            </p>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest dark:bg-surface-container-lowest w-full py-12 px-8 border-t border-outline-variant/10">
+<div class="flex flex-col md:flex-row justify-between items-center gap-8 max-w-7xl mx-auto">
+<span class="font-display text-xl text-primary">PARRILLA EL TORO</span>
+<div class="flex gap-8 font-body text-xs uppercase tracking-widest">
+<a class="text-on-surface-variant hover:text-tertiary transition-colors" href="#">Privacidad</a>
+<a class="text-on-surface-variant hover:text-tertiary transition-colors" href="#">Términos</a>
+<a class="text-on-surface-variant hover:text-tertiary transition-colors" href="#">Trabajá con nosotros</a>
+</div>
+<p class="font-body text-xs uppercase tracking-widest text-on-surface-variant">
+                © 2024 PARRILLA EL TORO. TRADICIÓN Y FUEGO.
+            </p>
+</div>
+</footer>
+<script>
+        // Simple parallax effect for images on scroll
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallaxImages = document.querySelectorAll('.group img');
+            parallaxImages.forEach(img => {
+                const speed = 0.05;
+                img.style.transform = `translateY(${scrolled * speed}px)`;
+            });
+        });
+    </script>
+
+
+</body></html>
