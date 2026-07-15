@@ -55,24 +55,24 @@
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
         }
-        /* Inputs: solo borde inferior, sin relleno, coherente con DESIGN.md */
-        .field-input {
-            background: transparent;
+        /* Inputs: fondo blanco hueso con texto negro para máximo contraste */
+        input.field-input, select.field-input {
+            background: #f5f5f0;
             border: 0;
-            border-bottom: 1px solid #8e9192;
+            border-bottom: 2px solid #8e9192;
             border-radius: 0;
-            padding: 0.5rem 0;
-            color: #e4e3d9;
+            padding: 0.65rem 0.85rem;
+            color: #000000;
             width: 100%;
-            color-scheme: dark;
+            color-scheme: light;
         }
         .field-input:focus {
             outline: none;
             border-bottom-color: #ffb59b;
             box-shadow: none;
         }
-        .field-input::placeholder { color: rgba(196,199,199,0.35); }
-        select.field-input option { background-color: #1b1c17; color: #e4e3d9; }
+        .field-input::placeholder { color: rgba(0,0,0,0.4); }
+        select.field-input option { background-color: #f5f5f0; color: #000000; }
     </style>
 </head>
 <body class="antialiased selection:bg-tertiary selection:text-on-tertiary">
