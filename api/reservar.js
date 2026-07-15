@@ -12,6 +12,20 @@
 //   RESERVAS_FROM  remitente      (default: PARRILLA EL TORO <onboarding@resend.dev>)
 
 module.exports = async (req, res) => {
+    // Health check: GET informa qué credenciales están presentes (sólo booleanos,
+    // nunca los valores). Útil para verificar la configuración sin acceder al panel.
+    if (req.method === 'GET') {
+        res.status(200).json({
+            ok: true,
+            env: {
+                resend: !!process.env.RESEND_API_KEY,
+                redisUrl: !!(process.env.UPSTASH_REDIS_REST_URL || process.env.KV_REST_API_URL),
+                redisToken: !!(process.env.UPSTASH_REDIS_REST_TOKEN || process.env.KV_REST_API_TOKEN)
+            }
+        });
+        return;
+    }
+
     if (req.method !== 'POST') {
         res.status(405).json({ ok: false, error: 'method_not_allowed' });
         return;
