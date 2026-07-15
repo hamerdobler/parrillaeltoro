@@ -56,10 +56,12 @@ module.exports = async (req, res) => {
 
 // --- Número de reserva: sorted set en Upstash Redis vía REST ---
 async function calcularNumeroReserva() {
-    const url = process.env.UPSTASH_REDIS_REST_URL;
-    const token = process.env.UPSTASH_REDIS_REST_TOKEN;
+    // Aceptamos ambas convenciones de nombres: la integración Upstash del Marketplace
+    // (UPSTASH_REDIS_REST_*) y la de Vercel KV nativa (KV_REST_API_*).
+    const url = process.env.UPSTASH_REDIS_REST_URL || process.env.KV_REST_API_URL;
+    const token = process.env.UPSTASH_REDIS_REST_TOKEN || process.env.KV_REST_API_TOKEN;
     if (!url || !token) {
-        throw new Error('Faltan UPSTASH_REDIS_REST_URL / UPSTASH_REDIS_REST_TOKEN');
+        throw new Error('Faltan credenciales de Redis (UPSTASH_REDIS_REST_URL/TOKEN o KV_REST_API_URL/TOKEN)');
     }
 
     const now = Date.now();
