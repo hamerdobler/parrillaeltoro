@@ -64,6 +64,7 @@
             padding: 0.5rem 0;
             color: #e4e3d9;
             width: 100%;
+            color-scheme: dark;
         }
         .field-input:focus {
             outline: none;
@@ -112,6 +113,11 @@
 <label class="text-xs uppercase tracking-[0.15em] font-semibold text-on-surface-variant" for="telefono">Número de Teléfono</label>
 <input class="field-input font-body" id="telefono" name="telefono" type="tel" placeholder="+54 9 11 2553 3950" required>
 </div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+<div class="flex flex-col gap-2">
+<label class="text-xs uppercase tracking-[0.15em] font-semibold text-on-surface-variant" for="fecha">Fecha</label>
+<input class="field-input font-body" id="fecha" name="fecha" type="date" required>
+</div>
 <div class="flex flex-col gap-2">
 <label class="text-xs uppercase tracking-[0.15em] font-semibold text-on-surface-variant" for="horario">Horario</label>
 <select class="field-input font-body" id="horario" name="horario" required>
@@ -131,6 +137,7 @@
 <option value="23:00">23:00</option>
 </select>
 </div>
+</div>
 <button class="w-full bg-tertiary text-on-tertiary px-12 py-4 font-display text-xl tracking-[0.2em] uppercase hover:scale-[1.02] transition-transform duration-300" type="submit">
                     Enviar
                 </button>
@@ -146,13 +153,40 @@
 <script>
         const form = document.getElementById('reserva-form');
         const confirmacion = document.getElementById('reserva-confirmacion');
+
+        // La fecha no puede ser anterior a hoy (fecha local, sin desfase por UTC)
+        const fechaInput = document.getElementById('fecha');
+        const hoy = new Date();
+        fechaInput.min = hoy.getFullYear() + '-' +
+            String(hoy.getMonth() + 1).padStart(2, '0') + '-' +
+            String(hoy.getDate()).padStart(2, '0');
+
         form.addEventListener('submit', function (e) {
             e.preventDefault();
             if (!form.checkValidity()) {
                 form.reportValidity();
                 return;
             }
-            // Reserva simulada: ocultamos el formulario y mostramos la confirmación
+
+            const payload = {
+                nombre: form.nombre.value.trim(),
+                personas: form.personas.value,
+                telefono: form.telefono.value.trim(),
+                fecha: form.fecha.value,
+                horario: form.horario.value
+            };
+
+            // Envío del correo (server-side). Best-effort: si falla, la UX no se bloquea
+            // y el error queda registrado en el servidor.
+            fetch('/api/reservar', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            }).catch(function (err) {
+                console.error('No se pudo enviar la reserva:', err);
+            });
+
+            // Mostramos la confirmación siempre
             form.classList.add('hidden');
             confirmacion.classList.remove('hidden');
             window.scrollTo({ top: 0, behavior: 'smooth' });
